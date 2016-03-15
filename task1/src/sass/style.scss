@@ -1,6 +1,14 @@
 @import "reset";
 
-$settings: (width: 100%, maxWidth: 1200px, columns: 12, breakpointers: (lg: "(min-width : 768px)"));
+$settings: (
+ width: 100%,
+ maxWidth: 1200px, 
+ columns: 12, 
+ breakpointers: (
+ lg: "(min-width : 768px)",
+ md: "(max-width : 768px)"
+ )
+ );
 
 @mixin box-sizing {
   box-sizing: border-box;
@@ -25,14 +33,6 @@ $settings: (width: 100%, maxWidth: 1200px, columns: 12, breakpointers: (lg: "(mi
     content: "";
     display: table;
     clear: both;
-  }
-
-  &:first-child {
-    padding-left: 0;
-  }
-
-  &:last-child {
-    padding-right: 0;
   }
 }
 
