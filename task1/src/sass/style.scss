@@ -1,69 +1,83 @@
-$settings:(
-	width:100%,
-	maxWidth:1200px,
-	columns:12,
-	breakpointers:(
-        lg: "(min-width : 768px)"
-	)
-);
-@mixin box-sizing{
-	box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-}
-.grid-container{
-	width:map-get($settings,"width");
-	max-width:map-get($settings,"maxWidth");
-}
-.grid-container *{
-	@include box-sizing;
-}
-.row{
-	padding:0 10px;
-	&:before , &:after{
-		content:"";
-	    display: table ;
-	    clear:both;
-	}
-}
-[class*='col-'] {
-    float: left;
-    min-height: 1px;
-    width: 16.66%;
-    >p{
-		background-color: #eee;
-	    padding: 0;
-	    margin: 0;
-	    text-align: center;
-	    color: #000;
-	    height: 50px;
-	    margin: 10px;
-	    .outline &{
-	    	border: 1px solid #999;
-		}
-	}
-	.row &:first-child {
-      padding-left: 0;
-    }
+@import "reset";
+
+$settings: (width: 100%, maxWidth: 1200px, columns: 12, breakpointers: (lg: "(min-width : 768px)"));
+
+@mixin box-sizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
-$breakpoints : map-get($settings,"breakpointers");
-@mixin media($queryString){
-	@media #{$queryString} {
-		@content;
-	}
+.grid-container {
+  width: map-get($settings, "width");
+  max-width: map-get($settings, "maxWidth");
+  margin: 0 auto;
 }
-@mixin renderGrid($key,$settings){
-	$i:1;
-	@while $i <= map-get($settings,"columns"){
-		.col-#{$key}-#{$i}{
-			width:100% * $i / map-get($settings,"columns");
-		}
-		$i : $i + 1;
-	}
+
+.grid-container * {
+  @include box-sizing;
 }
-@each $key,$breakpoint in $breakpoints {
-	@include media($breakpoint){
-		@include renderGrid($key,$settings);
-	}
+
+.row {
+  padding: 0 10px;
+
+  &:before, &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  width: 16.66%;
+  padding: 10px;
+
+   > p {
+    background-color: #eee;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: #000;
+    height: 50px;
+
+    .outline & {
+      border: 1px solid #999;
+    }
+  }
+}
+
+$breakpoints: map-get($settings, "breakpointers");
+
+@mixin media($queryString) {
+  @media #{$queryString} {
+    @content;
+  }
+}
+
+@mixin renderGrid($key, $settings) {
+  $i: 1;
+
+  @while $i <= map-get($settings, "columns") {
+    .col-#{$key}-#{$i} {
+      width: 100% * $i / map-get($settings, "columns");
+    }
+
+    $i: $i + 1;
+  }
+}
+
+@each $key, $breakpoint in $breakpoints {
+  @include media($breakpoint) {
+    @include renderGrid($key, $settings);
+  }
 }
