@@ -1,0 +1,75 @@
+@import "reset";
+
+$settings: (width: 100%, maxWidth: 100%, columns: 12, breakpointers: (lg: "(min-width : 768px)"));
+
+@mixin box-sizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.flex-container {
+  width: map-get($settings, "width");
+  max-width: map-get($settings, "maxWidth");
+  margin: 0 auto;
+}
+
+.flex-container * {
+  @include box-sizing;
+}
+
+.flex-row {
+  padding: 10px;
+  display: flex;
+
+  .box {
+    margin: 10px;
+    width: 150px;
+    text-align: center;
+    border: 1px solid #f00;
+
+    &.item1 {
+      height: 120px;
+    }
+
+    &.item2 {
+      height: 100px;
+    }
+
+    &.item3 {
+      height: 40px;
+    }
+
+    &.item4 {
+      height: 200px;
+      border: 1px solid #0f0;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .flex-row {
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .box {
+      align-self: center;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .flex-row {
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+    .box {
+      align-items: flex-start;
+
+      &.item4 {
+        order: -1;
+      }
+    }
+  }
+}
