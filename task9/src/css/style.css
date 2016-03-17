@@ -4,14 +4,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
+
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
+
 img {
-  vertical-align: top;
-}
+  vertical-align: top; }
+
 input, select, textarea {
   margin: 0;
   padding: 0;
@@ -20,69 +20,57 @@ input, select, textarea {
   tap-highlight-color: transparent;
   -webkit-tap-highlight-color: transparent;
   outline: 0;
-  box-shadow: none;
-}
+  box-shadow: none; }
+
 html {
   word-wrap: break-word;
   text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
+  -webkit-text-size-adjust: 100%; }
+
 body, html {
-  height: 100%;
-}
+  height: 100%; }
+
 .grid-container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
+
 .grid-container * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
+  -webkit-box-sizing: border-box; }
+
 .row {
   padding: 10px;
-  display: flex;
-}
-.row .box {
-  margin: 10px;
-  width: 150px;
-  text-align: center;
-  border: 1px solid #f00;
-}
-.row .box.item1 {
-  height: 120px;
-}
-.row .box.item2 {
-  height: 100px;
-}
-.row .box.item3 {
-  height: 40px;
-}
-.row .box.item4 {
-  height: 200px;
-  border: 1px solid #0f0;
-}
-@media (min-width:640px) {
+  display: flex; }
+  .row .box {
+    margin: 10px;
+    width: 150px;
+    text-align: center;
+    border: 1px solid #f00; }
+    .row .box.item1 {
+      height: 120px; }
+    .row .box.item2 {
+      height: 100px; }
+    .row .box.item3 {
+      height: 40px; }
+    .row .box.item4 {
+      height: 200px;
+      border: 1px solid #0f0; }
+
+@media (min-width: 640px) {
   .row {
     align-content: center;
     flex-direction: row;
-    justify-content: space-between;
-  }
-  .row .box {
-    align-self: center;
-  }
-}
-@media (max-width:640px) {
+    justify-content: space-between; }
+    .row .box {
+      align-self: center; } }
+
+@media (max-width: 640px) {
   .row {
     align-content: flex-start;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .row .box {
-    align-items: flex-start;
-  }
-  .row .box.item4 {
-    order: -1;
-  }
-}
+    flex-wrap: wrap; }
+    .row .box {
+      align-items: flex-start; }
+      .row .box.item4 {
+        order: -1; } }
