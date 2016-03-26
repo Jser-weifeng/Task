@@ -20,17 +20,20 @@
   在事件处理函数中
   获取aqi-input输入的值，并显示在aqi-display中
   */
-  var submitBtn = document.getElementById('button');
-  var aqiInput  = document.getElementById('aqi-input');
-  var showValue = document.getElementById('aqi-display');
+  
+  var submitBtn    = document.getElementById('button');
+  var aqiInputObj  = document.getElementById('aqi-input');
+  var showValueObj = document.getElementById('aqi-display');
 
-  submitBtn.onclick = function() {
-     if (aqiInput.value === '' || aqiInput.value === null ) {
-        showValue.innerText = '尚无录入';
+  var showValue = function() {
+     if (aqiInputObj.value === '' || aqiInputObj.value === null ) {
+        showValueObj.innerText = '尚无录入';
      } else {
-        showValue.innerText = aqiInput.value;
+        showValueObj.innerText = aqiInputObj.value;
      }
   }
+
+  submitBtn.addEventListener("click", showValue);
 
 })();
 
