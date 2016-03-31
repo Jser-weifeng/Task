@@ -13,25 +13,33 @@ var aqiData = {};
  * 然后渲染aqi-list列表，增加新增的数据
  */
 function addAqiData() {
- var cityInput = document.getElementById('aqi-city-input');
- var indexInput = document.getElementById('aqi-value-input');
+  var cityInput = document.getElementById('aqi-city-input');
+  var indexInput = document.getElementById('aqi-value-input');
 
- aqiData[cityInput.value] = indexInput.value;
+  cityInput.value && indexInput.value && (aqiData[cityInput.value] = indexInput.value);
 
- return aqiData;
+  if (!cityInput.value) {
+    alert('请输入城市名称');
+    return;
+  } else if (!indexInput.value) {
+    alert('请输入空气质量指数');
+    return;
+  }
+
+  return aqiData;
 }
-
-addAqiData();
 
 /**
  * 渲染aqi-table表格
  */
 function renderAqiList() {
-   var strHTML = '<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>';
-   for (var n in aqiData) {
-   	strHTML += '<tr><td>'+ n +'</td><td>'+ aqiData[n] +'</td><td><button>删除</button></td></tr>';
-   }
-   aqiData.length && (document.getElementById('aqi-table').innerHTML = strHTML);
+  var strHTML = '<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>';
+
+  for (var n in aqiData) {
+    strHTML += '<tr><td>' + n + '</td><td>' + aqiData[n] + '</td><td><button>删除</button></td></tr>';
+  }
+  document.getElementById('aqi-table').innerHTML = strHTML;
+
 }
 
 /**
@@ -60,10 +68,11 @@ function init() {
 
   document.getElementById('add-btn').addEventListener('click', addBtnHandle);
 
-  document.getElementById("aqi-table").addEventListener("click",function (e){
-  	if (e.target.nodeName=="BUTTON") {
-  		delBtnHandle(e.target.parentNode.parentNode.firstChild.firstChild.nodeValue);
-  	}
+  document.getElementById("aqi-table").addEventListener("click", function(e) {
+    if (e.target.nodeName == "BUTTON") {
+
+      delBtnHandle(e.target.parentNode.parentNode.firstChild.firstChild.nodeValue);
+    }
   });
 }
 
