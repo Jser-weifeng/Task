@@ -1,0 +1,37 @@
+<div class="column">
+  	<ul class="three_box">
+  		<li class="one">
+  			<div class="text_box">
+  				<p>新时代</p>
+  				<p>关于爱生活的我们</p>
+  				<div class="bor"></div>
+  				<a href="#" target="_blank" class="more_btn">查看更多</a>
+  			</div>
+  		</li>
+  		<li class="">
+  			<div class="text_box">
+  				<p>新时代</p>
+  				<p>关于爱生活的我们</p>
+  				<div class="bor"></div>
+  				<a href="#" target="_blank" class="more_btn">查看更多</a>
+  			</div>
+  		</li>
+  		<li class="three">
+  			<div class="img_cover_bg"></div>
+  			<div class="img_jiantou"></div>
+  			<img src="src/images/img_06.jpg" />
+  		</li>
+  	</ul>
+  </div>
+  .column{ width: 100%; min-width: 1280px; _width:1280px; overflow: hidden; clear: both;}
+.three_box li{ width: 33.33%; height: 520px; float: left; background: #FFFFFF; position: relative;}
+.three_box li.one{ background: #e74f4d;}
+.three_box li .text_box{ width: 100%; margin-top: 170px;}
+.three_box li .text_box p{ font-size: 21px; line-height: 36px; color: #323333; text-align: center;}
+.three_box li .text_box .bor{ width: 30px; height: 3px; background: #aaaaaa; margin: 15px auto 25px; clear: both;}
+.three_box li .text_box .more_btn{ width: 166px; height: 40px; line-height: 40px; font-size: 21px; color: #e95a58; text-align: center; display: block; margin: 0 auto; border: 1px solid #e95a58;}
+.three_box li.one .text_box p{ color: #FFFFFF;}
+.three_box li.one .text_box .bor{ background: #FFFFFF;}
+.three_box li.one .text_box .more_btn{ color: #FFFFFF; border-color: #FFFFFF;}
+.three_box li.three .img_cover_bg{ background: #000; opacity: 0.4; filter: alpha(opacity=40); position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1;}
+.three_box li.three .img_jiantou{ background: url(../images/icon_07.png) 0 0 no-repeat; position: absolute; left: 0; top: 50%; width: 25px; height: 31px; z-index: 2; margin-top: -16px;}
