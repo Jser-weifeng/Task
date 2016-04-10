@@ -9,36 +9,49 @@
       }
       #numBox > div {
         display: inline-block;
-        min-width: 8px;
+        min-width: 50px;
+        height: 50px;
+        padding: 10px;
         line-height: 50px;
-        background-color: red;
+        background-color: rgba(0, 0, 0, 1);
         color: #fff;
-        margin-right: 4px;
+        float: left;
+        margin-right: 10px;
         margin-top: 10px;
+        vertical-align: middle;
         text-align: center;
+      }
+      #err {
+        color: red;
+        opacity: .6;
       }
     </style>
   </head>
 <body>
   <fieldset>
-    <textarea name=""></textarea>
+    <textarea name="" id="aTextarea">23,231,3</textarea>
     <button type="button" value="左侧入" id="slideLeftIn">左侧入</button>
     <button type="button" value="右侧入" id="slideRightIn">右侧入</button>
     <button type="button" value="左侧出" id="slideLeftOut">左侧出</button>
     <button type="button" value="右侧出" id="slideRightOut">右侧出</button>
-    <button type="button" value="排序" id="order">排序</button>
+    <input type="text" name="" value="" placeholder="请输入查询文本" id="searchInput">
+    <button type="button" id="search">查询</button>
   </fieldset>
   <fieldset>
     <div id="numBox">
-      <div style="height: 23px">
-        
+      <div>
+        23
       </div>
-      <div style="height: 231px">
-        
+      <div>
+        231
       </div>
-      <div style="height: 2px">
+      <div>
+        3
       </div>
     </div>
+  </fieldset>
+  <fieldset>
+    <div id="err"></div>
   </fieldset>
   <script src="task.js"></script>
 </body>
