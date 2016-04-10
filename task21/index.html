@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 21</title>
+    <style>
+      fieldset {
+        border: none;
+      }
+      #tags > div {
+        display: inline-block;
+        min-width: 30px;
+        height: 30px;
+        padding: 10px;
+        line-height: 30px;
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+        margin-right: 10px;
+        margin-top: 10px;
+        vertical-align: middle;
+        text-align: center;
+      }
+      #errHobby, #errTag {
+        color: red;
+      }
+    </style>
+  </head>
+<body>
+  <fieldset>
+    <div id="tagBox">
+      <span>tag:</span>
+      <input type="text" name="" value="" placeholder="" id="tagsInput">
+      <div id="tags">
+      </div>
+    </div>
+    <p>要求遇到用户输入空格，逗号，回车时，都自动把当前输入的内容作为一个tag放在输入框下面。
+    <p>Tag不能有重复的，遇到重复输入的Tag，自动忽视。</p>
+    <p>每个Tag请做trim处理</p>
+    <p>最多允许10个Tag，多于10个时，按照录入的先后顺序，把最前面的删掉</p>
+    <p>当鼠标悬停在tag上时，tag前增加删除二字，点击tag可删除</p>
+    <p id="errTag"></p>
+  </fieldset>
+  <fieldset>
+    <textarea name=""></textarea>
+    <button type="button">确认兴趣爱好</button>
+    <p>爱好不能重复，所以在下方呈现前，需要做一个去重</p>
+    <p>每个爱好内容需要做trim处理</p>
+    <p>最多允许10个兴趣爱好，多于10个时，按照录入的先后顺序，把最前面的删掉</p>
+    <p id="errHobby"></p>
+  </fieldset>
+  <fieldset>
+    <div id="err"></div>
+  </fieldset>
+  <script src="task.js"></script>
+</body>
+</html>
